@@ -1,27 +1,45 @@
-# NextJS Typescript Boilerplate
+# Next.js app for Tooploox
 
-Bootstrap a developer-friendly NextJS app configured with:
+This is an app bootstrapped from `with-typescript-eslint-jest` from [here](https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest).
 
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
+## What it does?
 
-## Deploy your own
+It's an app which looks for the users in Github.com based on the user input.
+Shows details about the users, including name, link, top3 repositories.
 
-Deploy the example using [Vercel](https://vercel.com):
+## Technologies used
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest&project-name=with-typescript-eslint-jest&repository-name=with-typescript-eslint-jest)
+- Next.js (React, webpack under the hood)
+- Typescript
+- Styled-Components
+- Jest + React Testing Library
+- ESLint + multiple plugins
+- React-Axe
+- Jest-Axe
+- Husky
 
-## How to use
+## How to run it?
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### Install dependencies
 
-```bash
-npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-# or
-yarn create next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
+```javascript
+yarn install
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Run build locally
+
+```javascript
+yarn dev
+```
+
+### Run build on the server
+
+```javascript
+yarn dev:ssr
+```
+
+### Run unit tests
+
+```javascript
+yarn test
+```
