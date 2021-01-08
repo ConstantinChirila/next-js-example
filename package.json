@@ -1,6 +1,6 @@
 {
-  "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
+  "name": "tooploox-technical-test",
+  "author": "przemek | based on the @erikdstock example",
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
