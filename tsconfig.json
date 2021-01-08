@@ -14,7 +14,8 @@
       "@tooploox-components": ["components/index.ts"],
       "@tooploox-helpers": ["helpers/index.ts"],
       "@tooploox-services": ["services/index.ts"],
-      "@tooploox-test-helpers": ["test-helpers/index.ts"]
+      "@tooploox-test-helpers": ["test-helpers/index.ts"],
+      "@tooploox-theme": ["theme/index.ts"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
