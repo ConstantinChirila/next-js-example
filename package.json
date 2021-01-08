@@ -4,14 +4,15 @@
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "type-check": "tsc --pretty --noEmit",
+    "dev": "next dev -p 8080",
+    "dev:ssr": "next build && next start -p 8080",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
+    "start": "next start",
+    "test-all": "yarn lint && yarn type-check && yarn test",
     "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test"
+    "type-check": "tsc --pretty --noEmit"
   },
   "husky": {
     "hooks": {

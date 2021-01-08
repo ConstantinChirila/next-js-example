@@ -20,6 +20,9 @@ Shows details about the users, including name, link, top3 repositories.
 
 ## How to run it?
 
+By default the app will be served on the port `8080`.
+The url will be `http://localhost:8080`.
+
 ### Install dependencies
 
 ```javascript
