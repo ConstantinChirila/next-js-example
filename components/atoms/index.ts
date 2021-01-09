@@ -1,5 +1,6 @@
 export * from './avatar'
 export * from './button'
+export * from './description'
 export * from './heading'
 export * from './input-text'
 export * from './svg-icon'
