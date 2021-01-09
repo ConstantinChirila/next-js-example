@@ -1,4 +1,4 @@
-import { defaultTheme } from '../theme/theme'
+import { defaultTheme } from './theme/theme'
 
 type CustomTheme = typeof defaultTheme
 
