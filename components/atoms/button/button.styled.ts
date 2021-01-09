@@ -14,4 +14,5 @@ export const StyledButton = styled.button<TButtonProperties>`
   height: 3.6rem;
   letter-spacing: 0.04rem;
   padding: 1.2rem;
+  width: 100%;
 `
