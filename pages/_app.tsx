@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
-import { defaultTheme } from '@tooploox-test/theme'
+import { defaultTheme, GlobalStyles } from '@tooploox-test/theme'
 import { hasWindow } from '@tooploox-test/helpers'
 
 const isLocalEnvironment = process.env.NODE_ENV === 'development'
@@ -18,6 +18,7 @@ export default class MyApp extends App {
 
     return (
       <ThemeProvider theme={defaultTheme}>
+        <GlobalStyles />
         <Component {...pageProps} />
       </ThemeProvider>
     )
