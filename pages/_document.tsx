@@ -3,23 +3,23 @@ import { Fragment } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(context: DocumentContext) {
     const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+    const originalRenderPage = context.renderPage
 
     try {
-      ctx.renderPage = () =>
+      context.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (properties) =>
+            sheet.collectStyles(<App {...properties} />),
         })
 
-      const initialProps = await Document.getInitialProps(ctx)
+      const initialPropeties = await Document.getInitialProps(context)
       return {
-        ...initialProps,
+        ...initialPropeties,
         styles: (
           <Fragment>
-            {initialProps.styles}
+            {initialPropeties.styles}
             {sheet.getStyleElement()}
           </Fragment>
         ),

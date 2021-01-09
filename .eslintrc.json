@@ -39,6 +39,20 @@
       {
         "allow": ["warn", "error"]
       }
+    ],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "whitelist": {
+          "getServerSideProps": true,
+          "getStaticProps": true
+        },
+        "replacements": {
+          "env": {
+            "environment": false
+          }
+        }
+      }
     ]
   }
 }

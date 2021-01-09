@@ -11,11 +11,11 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@tooploox-components": ["components/index.ts"],
-      "@tooploox-helpers": ["helpers/index.ts"],
-      "@tooploox-services": ["services/index.ts"],
-      "@tooploox-test-helpers": ["test-helpers/index.ts"],
-      "@tooploox-theme": ["theme/index.ts"]
+      "@tooploox-test/components": ["components/index.ts"],
+      "@tooploox-test/helpers": ["helpers/index.ts"],
+      "@tooploox-test/services": ["services/index.ts"],
+      "@tooploox-test/test-helpers": ["test-helpers/index.ts"],
+      "@tooploox-test/theme": ["theme/index.ts"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
