@@ -1,9 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-family: ${({ theme }) => theme.font.family.primary}, sans-serif;
     font-size: 62.5%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
   }
 `
 
