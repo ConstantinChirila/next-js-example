@@ -4,4 +4,4 @@ export type TIconTypes = {
   icon?: ReactElement
 }
 
-export type TInputText = HTMLAttributes<HTMLInputElement> & TIconTypes
+export type TInputTextProperties = HTMLAttributes<HTMLInputElement> & TIconTypes

@@ -5,9 +5,12 @@ import {
   StyledInputText,
   StyledInputTextWrapper,
 } from './input-text.styled'
-import { TInputText } from './input-text.types'
+import { TInputTextProperties } from './input-text.types'
 
-export function InputText({ icon, ...properties }: TInputText): ReactElement {
+export function InputText({
+  icon,
+  ...properties
+}: TInputTextProperties): ReactElement {
   return (
     <StyledInputTextWrapper>
       {icon && <StyledIconWrapper>{icon}</StyledIconWrapper>}
