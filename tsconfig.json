@@ -12,6 +12,7 @@
     "noEmit": true,
     "paths": {
       "@tooploox-test/components": ["components/index.ts"],
+      "@tooploox-test/configuration": ["configuration/index.ts"],
       "@tooploox-test/helpers": ["helpers/index.ts"],
       "@tooploox-test/services": ["services/index.ts"],
       "@tooploox-test/test-helpers": ["test-helpers/index.ts"],
