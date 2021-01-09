@@ -1,9 +1,11 @@
 import { urls } from '@tooploox-test/configuration'
 
 // TODO: fix any type
-export async function getUsers(name: string): Promise<any> {
+export async function getUsersRepositories(name: string): Promise<any> {
   try {
-    const response = await fetch(`${urls.githubApi}/${name}`)
+    const response = await fetch(
+      `${urls.githubSearchApi}/repositories?q=user:${name}+sort:stars`
+    )
     const json = await response.json()
 
     return json
