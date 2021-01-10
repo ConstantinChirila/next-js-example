@@ -1,15 +1,22 @@
 import { urls } from '@tooploox-test/configuration'
 
-// TODO: fix any type
-export async function getUsersRepositories(name: string): Promise<any> {
+import {
+  TGetUserRespositoriesResponse,
+  TRepositorySingle,
+} from './get-users-repositories.types'
+
+export async function getUsersRepositories(
+  name: string
+): Promise<TRepositorySingle[]> {
   try {
     const response = await fetch(
       `${urls.githubSearchApi}/repositories?q=user:${name}+sort:stars`
     )
-    const json = await response.json()
+    const { items } = (await response.json()) as TGetUserRespositoriesResponse
 
-    return json
+    return items
   } catch (error) {
     console.error(error)
+    return error
   }
 }
