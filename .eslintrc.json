@@ -40,6 +40,7 @@
         "allow": ["warn", "error"]
       }
     ],
+    "unicorn/no-fn-reference-in-iterator": "off",
     "unicorn/prevent-abbreviations": [
       "error",
       {
