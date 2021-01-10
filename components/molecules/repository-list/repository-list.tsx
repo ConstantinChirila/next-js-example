@@ -13,12 +13,13 @@ export function RepositoryList({
   return (
     <StyledRepositoryListWrapper>
       <Heading as="h2">{heading}</Heading>
+      {!list ||
+        (list.length === 0 && <Description>{fallbackMessage}</Description>)}
       {list?.map(({ link, text }) => (
         <Pill as="a" href={link}>
           {text}
         </Pill>
       ))}
-      {list?.length === 0 && <Description>{fallbackMessage}</Description>}
     </StyledRepositoryListWrapper>
   )
 }
