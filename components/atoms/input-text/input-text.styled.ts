@@ -67,7 +67,8 @@ export const StyledInputText = styled.input<TInputTextProperties>`
     color: transparent;
   }
 
-  &:focus {
+  &:focus,
+  &:not(:placeholder-shown) {
     + ${StyledLabel} {
       color: ${({ theme }) => theme.colors.navy};
       font-size: 1rem;
