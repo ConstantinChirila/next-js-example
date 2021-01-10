@@ -1,4 +1,4 @@
-import { urls } from '@tooploox-test/configuration'
+import { authTokensForGithub, urls } from '@tooploox-test/configuration'
 
 import { TGetUserRespositoriesResponse } from './get-user-repositories.types'
 
@@ -7,7 +7,10 @@ export async function getUserRepositories(
 ): Promise<TGetUserRespositoriesResponse | Error> {
   try {
     const response = await fetch(
-      `${urls.githubSearchApi}/repositories?q=user:${name}+sort:stars`
+      `${urls.githubSearchApi}/repositories?q=user:${name}+sort:stars`,
+      {
+        headers: authTokensForGithub,
+      }
     )
     if (!response.ok) {
       return new Error(response.statusText)
