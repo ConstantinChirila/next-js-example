@@ -52,7 +52,7 @@ export type TRepositorySingle = {
   license?: TRepositoryLicense
   merges_url: string
   milestones_url: string
-  mirror_url?: any
+  mirror_url?: string | null
   name: string
   node_id: string
   notifications_url: string

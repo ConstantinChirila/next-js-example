@@ -1,5 +1,6 @@
 type TUrls = Record<string, string>
 
 export const urls: TUrls = {
-  githubApi: `https://api.github.com/users`,
+  githubSearchApi: `https://api.github.com/search`,
+  githubUserApi: `https://api.github.com/users`,
 }

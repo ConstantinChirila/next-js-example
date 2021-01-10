@@ -3,9 +3,9 @@ import { urls } from '@tooploox-test/configuration'
 import {
   TGetUserRespositoriesResponse,
   TRepositorySingle,
-} from './get-users-repositories.types'
+} from './get-user-repositories.types'
 
-export async function getUsersRepositories(
+export async function getUserRepositories(
   name: string
 ): Promise<TRepositorySingle[]> {
   try {
@@ -16,6 +16,7 @@ export async function getUsersRepositories(
 
     return items
   } catch (error) {
+    // we can handle it with Sentry, AppInsights, Rollbar etc
     console.error(error)
     return error
   }
