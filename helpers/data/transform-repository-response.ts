@@ -1,8 +1,7 @@
-import { TRepositorySingle } from 'services/get-user-repositories/get-user-repositories.types'
-
-export function getFirstThreeElementsFromArray(array: []) {
-  return [...array].slice(0, 3)
-}
+import {
+  TGetUserRespositoriesResponse,
+  TRepositorySingle,
+} from 'services/get-user-repositories/get-user-repositories.types'
 
 function mapRepositorySingle({
   name,
@@ -20,12 +19,15 @@ function mapRepositorySingle({
   }
 }
 
-export function transformRepositoryResponse(array: TRepositorySingle[]) {
-  if (!array || array.length === 0) {
+export function transformRepositoryResponse(
+  response: TGetUserRespositoriesResponse
+) {
+  const { items: itemsArray } = response
+  if (!itemsArray || itemsArray.length === 0) {
     return []
   }
 
-  const threeElementsArray = getFirstThreeElementsFromArray(array)
+  const threeElementsArray = [...itemsArray].slice(0, 3)
   const transformedArray = threeElementsArray.map(mapRepositorySingle)
   return transformedArray
 }
