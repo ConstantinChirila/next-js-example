@@ -1,5 +1,5 @@
-import { HTMLAttributes } from 'react'
+import { AllHTMLAttributes, ElementType } from 'react'
 
-export type THeadingProperties = HTMLAttributes<
-  HTMLHeadingElement & HTMLElement
->
+export type THeadingProperties = AllHTMLAttributes<HTMLHeadingElement> & {
+  as?: ElementType
+}

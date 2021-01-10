@@ -1,3 +1,5 @@
-import { HTMLAttributes } from 'react'
+import { AllHTMLAttributes, ElementType } from 'react'
 
-export type TPillProperties = HTMLAttributes<HTMLDivElement>
+export type TPillProperties = AllHTMLAttributes<HTMLDivElement> & {
+  as?: ElementType
+}

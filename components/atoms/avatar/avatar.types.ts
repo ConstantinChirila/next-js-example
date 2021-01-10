@@ -1,3 +1,3 @@
-import { HTMLAttributes } from 'react'
+import { ImgHTMLAttributes } from 'react'
 
-export type TAvatarProperties = HTMLAttributes<HTMLImageElement>
+export type TAvatarProperties = ImgHTMLAttributes<HTMLImageElement>

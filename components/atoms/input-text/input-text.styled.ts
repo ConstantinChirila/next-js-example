@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { TInputText } from './input-text.types'
+import { TInputTextProperties } from './input-text.types'
 
 import { StyledSVGIcon } from '../svg-icon/svg-icon.styled'
 
@@ -30,14 +30,13 @@ export const StyledIconWrapper = styled.div`
   }
 `
 
-export const StyledInputText = styled.input<TInputText>`
+export const StyledInputText = styled.input<TInputTextProperties>`
   background-color: ${({ theme }) => theme.colors.grey1};
   border-radius: ${({ theme }) => theme.radius.md};
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border: none;
   color: ${({ theme }) => theme.colors.grey5};
-  flex: 1;
   font-family: ${({ theme }) => theme.font.family.primary}, sans-serif;
   font-size: 1.4rem;
   height: 3.6rem;
