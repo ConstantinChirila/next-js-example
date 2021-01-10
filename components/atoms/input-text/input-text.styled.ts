@@ -59,8 +59,12 @@ export const StyledInputText = styled.input<TInputTextProperties>`
   width: 100%;
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.grey4};
-    letter-spacing: 0.04rem;
+    /* Why have done it?
+     This is due to the design of the form element and a lack of time to find any better solution :-(
+     Typically, I would just keep it as it has some benefits to give a hint for people what they need to enter in the field.
+     I needed to use this trick... Sorry!
+     */
+    color: transparent;
   }
 
   &:focus {
