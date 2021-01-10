@@ -9,10 +9,12 @@ export const InitialUserData: TUserProfile = {
 }
 
 export const UserContext = createContext<TUserContext>({
-  status: 'idle',
+  errorMessage: '',
   repositories: [],
-  userProfile: InitialUserData,
+  setErrorMessage: () => '',
+  setRepositories: () => [],
   setStatus: () => 'idle',
   setUserProfile: () => InitialUserData,
-  setRepositories: () => [],
+  status: 'idle',
+  userProfile: InitialUserData,
 })

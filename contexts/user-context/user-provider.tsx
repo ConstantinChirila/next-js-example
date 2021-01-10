@@ -13,16 +13,19 @@ export function UserProvider({
   const [userProfile, setUserProfile] = useState<TUserProfile>(InitialUserData)
   const [status, setStatus] = useState<TStatusTypes>('idle')
   const [repositories, setRepositories] = useState<TRepositorySingle[]>([])
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
   return (
     <UserContext.Provider
       value={{
-        status,
+        errorMessage,
+        repositories,
+        setErrorMessage,
+        setRepositories,
         setStatus,
         setUserProfile,
+        status,
         userProfile,
-        repositories,
-        setRepositories,
       }}
     >
       {children}
