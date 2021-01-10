@@ -7,6 +7,7 @@ export const StyledButton = styled.button<TButtonProperties>`
   border-radius: ${({ theme }) => theme.radius.md};
   border: none;
   color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
   display: inline-block;
   font-family: inherit;
   font-size: 1.2rem;
