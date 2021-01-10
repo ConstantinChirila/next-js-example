@@ -3,9 +3,13 @@ import { TGetUserDetailsResponse } from './get-user-details.types'
 
 export async function getUserDetails(
   name: string
-): Promise<TGetUserDetailsResponse> {
+): Promise<TGetUserDetailsResponse | Error> {
   try {
     const response = await fetch(`${urls.githubUserApi}/${name}`)
+    if (!response.ok) {
+      return new Error(response.statusText)
+    }
+
     const json = await response.json()
 
     return json
