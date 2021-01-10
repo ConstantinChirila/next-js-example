@@ -4,17 +4,21 @@ import {
   StyledIconWrapper,
   StyledInputText,
   StyledInputTextWrapper,
+  StyledLabel,
 } from './input-text.styled'
 import { TInputTextProperties } from './input-text.types'
 
 export function InputText({
+  id,
+  placeholder,
   icon,
   ...properties
 }: TInputTextProperties): ReactElement {
   return (
     <StyledInputTextWrapper>
       {icon && <StyledIconWrapper>{icon}</StyledIconWrapper>}
-      <StyledInputText {...properties} />
+      <StyledInputText {...properties} id={id} />
+      <StyledLabel htmlFor={id}>{placeholder}</StyledLabel>
     </StyledInputTextWrapper>
   )
 }

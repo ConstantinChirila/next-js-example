@@ -12,6 +12,17 @@ export const StyledInputTextWrapper = styled.div`
   width: 100%;
 `
 
+export const StyledLabel = styled.label`
+  color: ${({ theme }) => theme.colors.grey4};
+  font-size: 1.4rem;
+  left: 1rem;
+  letter-spacing: 0.04rem;
+  pointer-events: none;
+  position: absolute;
+  top: 1rem;
+  transition: 0.1s ease transform, color, font-size;
+`
+
 export const StyledIconWrapper = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.grey1};
@@ -27,6 +38,10 @@ export const StyledIconWrapper = styled.div`
 
   > ${StyledSVGIcon} {
     transform: scale(0.7);
+  }
+
+  ~ ${StyledLabel} {
+    left: 3rem;
   }
 `
 
@@ -46,5 +61,13 @@ export const StyledInputText = styled.input<TInputTextProperties>`
   ::placeholder {
     color: ${({ theme }) => theme.colors.grey4};
     letter-spacing: 0.04rem;
+  }
+
+  &:focus {
+    + ${StyledLabel} {
+      color: ${({ theme }) => theme.colors.navy};
+      font-size: 1rem;
+      transform: translate3d(0, -1rem, 0);
+    }
   }
 `
