@@ -2,6 +2,6 @@ import styled from 'styled-components'
 
 export const StyledFormWrapper = styled.form`
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 1.5rem;
+  grid-template-columns: minmax(24.5rem, 2fr) minmax(6.4rem, 15rem);
+  grid-gap: 1.6rem;
 `

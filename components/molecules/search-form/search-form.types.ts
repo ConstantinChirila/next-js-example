@@ -1,3 +1,10 @@
-import { HTMLAttributes } from 'react'
+import { FormHTMLAttributes } from 'react'
 
-export type TSearchFormProperties = HTMLAttributes<HTMLFormElement>
+import { TButtonProperties } from 'components/atoms/button/button.types'
+import { TInputTextProperties } from 'components/atoms/input-text/input-text.types'
+
+export type TSearchFormProperties = {
+  buttonProperties?: TButtonProperties
+  formProperties?: FormHTMLAttributes<HTMLFormElement>
+  inputProperties?: TInputTextProperties
+}
