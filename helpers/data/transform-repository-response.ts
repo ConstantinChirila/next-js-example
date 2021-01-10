@@ -1,4 +1,4 @@
-import { TRepositorySingle } from 'services/get-users-repositories/get-users-repositories.types'
+import { TRepositorySingle } from 'services/get-user-repositories/get-user-repositories.types'
 
 export function getFirstThreeElementsFromArray(array: []) {
   return [...array].slice(0, 3)
@@ -21,6 +21,10 @@ function mapRepositorySingle({
 }
 
 export function transformRepositoryResponse(array: TRepositorySingle[]) {
+  if (!array || array.length === 0) {
+    return []
+  }
+
   const threeElementsArray = getFirstThreeElementsFromArray(array)
   const transformedArray = threeElementsArray.map(mapRepositorySingle)
   return transformedArray
