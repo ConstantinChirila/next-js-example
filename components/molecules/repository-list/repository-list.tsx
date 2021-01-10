@@ -15,9 +15,10 @@ export function RepositoryList({
       <Heading as="h2">{heading}</Heading>
       {!list ||
         (list.length === 0 && <Description>{fallbackMessage}</Description>)}
-      {list?.map(({ link, text }) => (
-        <Pill as="a" href={link}>
-          {text}
+      {list?.map(({ name, url, stars }, index) => (
+        <Pill as="a" href={url} key={`repository-list-item-${index}`}>
+          {name}
+          {stars}
         </Pill>
       ))}
     </StyledRepositoryListWrapper>

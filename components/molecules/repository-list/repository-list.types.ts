@@ -1,6 +1,7 @@
 type TSinglePill = {
-  link: string
-  text: string
+  name: string
+  url: string
+  stars?: string
 }
 
 export type TRepositoryListProperties = {
