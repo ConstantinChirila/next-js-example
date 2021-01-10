@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    background-color: ${({ theme }) => theme.colors.grey6};
     margin: 0;
     padding: 0;
   }
@@ -25,6 +26,7 @@ export const defaultTheme = {
     grey3: '#828282',
     grey4: '#9E9E9E',
     grey5: '#4F4F4F',
+    grey6: '#FBFCFD',
     navy: '#452CDC',
     white: '#FFFFFF',
   },
@@ -34,6 +36,7 @@ export const defaultTheme = {
     },
     weight: {
       regular: 400,
+      medium: 500,
       semiBold: 600,
       bold: 700,
     },
