@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
-export type TApplicationStatus = 'idle' | 'success' | 'error'
+export type TStatusTypes = 'idle' | 'fetching' | 'success' | 'error'
+export type TStatus = Record<'status', TStatusTypes>
 
 export type TRepositorySingle = {
   name: string
@@ -11,12 +12,17 @@ export type TUserProfile = {
   avatarUrl: string
   description: string
   name: string
+}
+
+export type TUserData = {
+  userProfile: TUserProfile
   repositories: TRepositorySingle[]
 }
 
-export type TUserContext = {
-  status: TApplicationStatus
-  setStatus: Dispatch<SetStateAction<TApplicationStatus>> | undefined
-  userData: TUserProfile
-  setUserData: Dispatch<SetStateAction<TUserProfile>> | undefined
+export type TContextSetters = {
+  setRepositories: Dispatch<SetStateAction<TRepositorySingle[]>>
+  setStatus: Dispatch<SetStateAction<TStatusTypes>>
+  setUserProfile: Dispatch<SetStateAction<TUserProfile>>
 }
+
+export type TUserContext = TStatus & TUserData & TContextSetters

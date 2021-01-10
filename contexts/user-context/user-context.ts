@@ -6,12 +6,13 @@ export const InitialUserData: TUserProfile = {
   avatarUrl: '',
   description: '',
   name: '',
-  repositories: [],
 }
 
 export const UserContext = createContext<TUserContext>({
   status: 'idle',
-  setStatus: undefined,
-  userData: InitialUserData,
-  setUserData: undefined,
+  repositories: [],
+  userProfile: InitialUserData,
+  setStatus: () => 'idle',
+  setUserProfile: () => InitialUserData,
+  setRepositories: () => [],
 })
