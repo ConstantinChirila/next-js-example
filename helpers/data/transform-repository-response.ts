@@ -23,10 +23,6 @@ export function transformRepositoryResponse(
   response: TGetUserRespositoriesResponse
 ) {
   const { items: itemsArray } = response
-  if (!itemsArray || itemsArray.length === 0) {
-    return []
-  }
-
   const threeElementsArray = [...itemsArray].slice(0, 3)
   const transformedArray = threeElementsArray.map(mapRepositorySingle)
   return transformedArray

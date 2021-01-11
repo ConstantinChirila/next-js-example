@@ -6,8 +6,11 @@ export async function getUserRepositories(
   name: string
 ): Promise<TGetUserRespositoriesResponse | Error> {
   try {
+    const queryString = `q=${encodeURIComponent(
+      `GitHub Octocat in:user:${name}+sort:stars`
+    )}`
     const response = await fetch(
-      `${urls.githubSearchApi}/repositories?q=user:${name}+sort:stars`,
+      `${urls.githubSearchApi}/repositories?${queryString}`,
       {
         headers: authTokensForGithub,
       }
