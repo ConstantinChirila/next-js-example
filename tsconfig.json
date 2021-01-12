@@ -14,6 +14,7 @@
       "@tooploox-test/components": ["components/index.ts"],
       "@tooploox-test/configuration": ["configuration/index.ts"],
       "@tooploox-test/helpers": ["helpers/index.ts"],
+      "@tooploox-test/hooks": ["hooks/index.ts"],
       "@tooploox-test/services": ["services/index.ts"],
       "@tooploox-test/test-helpers": ["test-helpers/index.ts"],
       "@tooploox-test/theme": ["theme/index.ts"]
