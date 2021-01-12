@@ -2,6 +2,6 @@ import { useQuery } from 'react-query'
 
 import { getUserDetails } from '@tooploox-test/services'
 
-export function getProfileDetails(name: string) {
+export function useProfileDetails(name: string) {
   return useQuery(['name', name], () => getUserDetails(name))
 }
