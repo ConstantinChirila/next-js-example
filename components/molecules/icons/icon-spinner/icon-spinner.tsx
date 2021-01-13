@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { SVGIcon, TIconTypes } from '@tooploox-test/components'
+import { SVGIcon, TIconTypes, VisuallyHidden } from '@tooploox-test/components'
 
 export function IconSpinner(properties: TIconTypes): ReactElement {
   return (
@@ -7,7 +7,9 @@ export function IconSpinner(properties: TIconTypes): ReactElement {
       viewBox="0 0 100 100"
       enable-background="new 0 0 0 0"
       {...properties}
+      aria-hidden="true"
     >
+      <VisuallyHidden>Spinner icon</VisuallyHidden>
       <circle fill="none" strokeWidth="4" cx="50" cy="50" r="44" />
       <circle strokeWidth="3" cx="8" cy="54" r="6">
         <animateTransform
