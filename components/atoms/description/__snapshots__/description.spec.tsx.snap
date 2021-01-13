@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description should match a snapshot 1`] = `
+.c0 {
+  color: #828282;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  line-height: 1.3571428571428572;
+  max-width: 28rem;
+  width: 100%;
+}
+
+<div>
+  <p
+    class="c0"
+  >
+    hello
+  </p>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VisuallyHidden should match a snapshot 1`] = `
+.c0 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 0.1rem;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 0.1rem;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    hello
+  </span>
+</div>
+`;

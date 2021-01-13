@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText should match a snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  color: #9E9E9E;
+  font-size: 1.4rem;
+  left: 1rem;
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  pointer-events: none;
+  position: absolute;
+  top: 1rem;
+  -webkit-transition: 0.1s ease -webkit-transform,color,font-size;
+  -webkit-transition: 0.1s ease transform,color,font-size;
+  transition: 0.1s ease transform,color,font-size;
+}
+
+.c1 {
+  background-color: #F0F3F4;
+  border-radius: 0.8rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: none;
+  color: #4F4F4F;
+  font-family: Roboto,sans-serif;
+  font-size: 1.4rem;
+  height: 3.6rem;
+  padding: 1.4rem 1.4rem 1.4rem 0.8rem;
+  width: 100%;
+}
+
+.c1::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.c1::-moz-placeholder {
+  color: transparent;
+}
+
+.c1:-ms-input-placeholder {
+  color: transparent;
+}
+
+.c1::placeholder {
+  color: transparent;
+}
+
+.c1:focus + .c2,
+.c1:not(:placeholder-shown) + .c2 {
+  color: #452CDC;
+  font-size: 1rem;
+  -webkit-transform: translate3d(0,-1rem,0);
+  -ms-transform: translate3d(0,-1rem,0);
+  transform: translate3d(0,-1rem,0);
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1"
+      id="yoyo"
+      placeholder="yoyo"
+    />
+    <label
+      class="c2 c3"
+      for="yoyo"
+    >
+      yoyo
+    </label>
+  </div>
+</div>
+`;

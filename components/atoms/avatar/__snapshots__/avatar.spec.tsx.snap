@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should match a snapshot 1`] = `
+.c0 {
+  border-radius: 1.2rem;
+  display: block;
+  height: 6.4rem;
+  object-fit: cover;
+  object-position: center;
+  width: 6.4rem;
+}
+
+<div>
+  <img
+    alt="hello alt"
+    class="c0"
+    src="http://placekitten.com/90/90"
+  />
+</div>
+`;
