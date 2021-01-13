@@ -1,3 +1,3 @@
 export type TErrorProperties = {
-  isNotFound: boolean
+  isNotFound?: boolean
 }
