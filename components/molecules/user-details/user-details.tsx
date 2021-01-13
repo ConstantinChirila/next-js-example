@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react'
 import {
   Avatar,
   Description,
+  Error,
   Heading,
   Spinner,
 } from '@tooploox-test/components'
@@ -14,6 +15,7 @@ import {
 import { TUserDetailsProperties } from './user-details.types'
 
 export function UserDetails({
+  error,
   profile,
   status,
 }: TUserDetailsProperties): ReactElement {
@@ -27,11 +29,12 @@ export function UserDetails({
     return <Spinner />
   }
 
-  if (status === 'error' || !profile) {
-    return <>error</>
+  if (status === 'error') {
+    const isNotFound = error === 'Not Found'
+    return <Error isNotFound={isNotFound} />
   }
 
-  const { avatarUrl, description, name } = profile
+  const { avatarUrl, description, name } = profile || {}
   return (
     <StyledUserDetails>
       <StyledUserAvatarWrapper>

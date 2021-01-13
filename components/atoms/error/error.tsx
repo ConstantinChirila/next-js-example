@@ -3,16 +3,19 @@ import React, { ReactElement } from 'react'
 import { Heading } from '@tooploox-test/components'
 
 import { TErrorProperties } from './error.types'
-import { StyledError, StyledErrorMessage } from './error.styled'
-import { IconNotFound } from 'components/molecules/icons/icon-not-found'
+import {
+  StyledError,
+  StyledErrorMessage,
+  StyledNotFoundIcon,
+} from './error.styled'
 
-export function Error({ message }: TErrorProperties): ReactElement {
+export function Error({ isNotFound }: TErrorProperties): ReactElement {
   // a fallback in case if we expect a certain error
   // in our case we know it might 404 when user is not found
-  if (message.toLocaleLowerCase() === 'not found') {
+  if (isNotFound) {
     return (
       <StyledError>
-        <IconNotFound fill="white" width="50px" height="50px" />
+        <StyledNotFoundIcon />
         <Heading as="p">User not found!</Heading>
       </StyledError>
     )

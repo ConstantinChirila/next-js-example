@@ -7,6 +7,7 @@ type TSinglePill = {
 }
 
 export type TRepositoryListProperties = {
+  error: unknown
   fallbackMessage: string
   heading: string
   list: TSinglePill[] | undefined

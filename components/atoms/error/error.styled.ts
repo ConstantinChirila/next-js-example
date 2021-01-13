@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { IconNotFound } from '@tooploox-test/components'
+
 export const StyledError = styled.div`
   background-color: ${({ theme }) => theme.colors.red};
   border-radius: ${({ theme }) => theme.radius.sm};
@@ -10,4 +12,10 @@ export const StyledError = styled.div`
 `
 export const StyledErrorMessage = styled.p`
   line-height: 1.6;
+`
+
+export const StyledNotFoundIcon = styled(IconNotFound)`
+  fill: ${({ theme }) => theme.colors.white};
+  height: 7rem;
+  width: 7rem;
 `

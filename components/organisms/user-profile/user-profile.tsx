@@ -10,19 +10,27 @@ import { TUserProfileProperties } from './user-profile.types'
 export function UserProfile({
   profileName,
 }: TUserProfileProperties): ReactElement {
-  const { data: profile, status: profileStatus } = useProfileDetails(
-    profileName
-  )
+  const {
+    data: profile,
+    status: profileStatus,
+    error: profileError,
+  } = useProfileDetails(profileName)
   // we are depending if user exists, then fetch repositories for them
-  const { data: repositories, status: repositoriesStatus } = useRepositories(
-    profileName,
-    !!profile
-  )
+  const {
+    data: repositories,
+    status: repositoriesStatus,
+    error: repositoriesError,
+  } = useRepositories(profileName, !!profile)
 
   return (
     <StyledUserProfile>
-      <UserDetails profile={profile} status={profileStatus} />
+      <UserDetails
+        error={profileError}
+        profile={profile}
+        status={profileStatus}
+      />
       <RepositoryList
+        error={repositoriesError}
         fallbackMessage="No repositories found for a given user..."
         heading="Top repositories"
         list={repositories}

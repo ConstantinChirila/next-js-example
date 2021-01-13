@@ -8,8 +8,10 @@ import {
   StyledRepositoryListWrapper,
   TRepositoryListProperties,
 } from '@tooploox-test/components'
+import { Error } from 'components/atoms'
 
 export function RepositoryList({
+  error,
   fallbackMessage,
   heading,
   list,
@@ -23,8 +25,12 @@ export function RepositoryList({
     return <Spinner />
   }
 
-  if (!list || list.length === 0 || status === 'error') {
+  if (!list || list.length === 0) {
     return <Description>{fallbackMessage}</Description>
+  }
+
+  if (status === 'error') {
+    return <Error message={error} />
   }
 
   return (
