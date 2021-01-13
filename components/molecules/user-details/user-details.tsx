@@ -29,19 +29,21 @@ export function UserDetails({
     return <Spinner />
   }
 
-  if (status === 'error') {
+  if (status === 'error' || !profile) {
     const isNotFound = error === 'Not Found'
     return <Error isNotFound={isNotFound} />
   }
 
-  const { avatarUrl, description, name } = profile || {}
+  const { avatarUrl, description, name } = profile
   return (
     <StyledUserDetails>
       <StyledUserAvatarWrapper>
-        <Avatar
-          alt={`Avatar of ${name || 'user without specified full name'}`}
-          src={avatarUrl}
-        />
+        {avatarUrl && (
+          <Avatar
+            alt={`Avatar of ${name || 'user without specified full name'}`}
+            src={avatarUrl}
+          />
+        )}
         <Heading>{name || 'Name not specified'}</Heading>
       </StyledUserAvatarWrapper>
       <Description>{description || 'Description not specified'}</Description>
