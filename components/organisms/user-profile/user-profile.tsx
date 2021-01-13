@@ -1,20 +1,32 @@
 import React, { ReactElement } from 'react'
 
-import { RepositoryList, UserDetails } from '@tooploox-test/components'
-import { StyledUserProfile } from './user-profile.styled'
+import { UserDetails } from '@tooploox-test/components'
 
-export function UserProfile(): ReactElement {
+import { useProfileDetails, useRepositories } from '@tooploox-test/hooks'
+import { StyledUserProfile } from './user-profile.styled'
+import { RepositoryList } from 'components/molecules'
+import { TUserProfileProperties } from './user-profile.types'
+
+export function UserProfile({
+  profileName,
+}: TUserProfileProperties): ReactElement {
+  const { data: profile, status: profileStatus } = useProfileDetails(
+    profileName
+  )
+  // we are depending if user exists, then fetch repositories for them
+  const { data: repositories, status: repositoriesStatus } = useRepositories(
+    profileName,
+    !!profile
+  )
+
   return (
     <StyledUserProfile>
-      <UserDetails
-        avatarUrl="http://placekitten.com/64/64"
-        description="Software developer, Blockchain @tooploox, fan of hackathons, react Wroclaw meetup organiser, ML enthusiast"
-        profileName="Krzysztof Nowakowski"
-      />
+      <UserDetails profile={profile} status={profileStatus} />
       <RepositoryList
         fallbackMessage="No repositories found for a given user..."
         heading="Top repositories"
-        list={[]}
+        list={repositories}
+        status={repositoriesStatus}
       />
     </StyledUserProfile>
   )
