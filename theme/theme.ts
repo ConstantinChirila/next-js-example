@@ -28,6 +28,7 @@ export const defaultTheme = {
     grey5: '#4F4F4F',
     grey6: '#FBFCFD',
     navy: '#452CDC',
+    red: '#FF0F79',
     white: '#FFFFFF',
   },
   font: {

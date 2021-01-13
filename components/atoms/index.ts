@@ -1,6 +1,7 @@
 export * from './avatar'
 export * from './button'
 export * from './description'
+export * from './error'
 export * from './heading'
 export * from './input-text'
 export * from './pill'
