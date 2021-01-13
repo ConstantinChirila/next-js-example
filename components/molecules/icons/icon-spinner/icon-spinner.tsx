@@ -9,7 +9,7 @@ export function IconSpinner(properties: TIconTypes): ReactElement {
       {...properties}
       aria-hidden="true"
     >
-      <VisuallyHidden>Spinner icon</VisuallyHidden>
+      <VisuallyHidden as="title">Spinner icon</VisuallyHidden>
       <circle fill="none" strokeWidth="4" cx="50" cy="50" r="44" />
       <circle strokeWidth="3" cx="8" cy="54" r="6">
         <animateTransform
