@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconSpinner should match a snapshot 1`] = `
+.c0 {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 0.1rem;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 0.1rem;
+}
+
+<div>
+  <svg
+    aria-hidden="true"
+    class="c0"
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title
+      class="c1"
+    >
+      Spinner icon
+    </title>
+    <circle
+      cx="50"
+      cy="50"
+      fill="none"
+      r="44"
+      stroke-width="4"
+    />
+    <circle
+      cx="8"
+      cy="54"
+      r="6"
+      stroke-width="3"
+    >
+      <animatetransform
+        attributeName="transform"
+        dur="2s"
+        from="0 50 48"
+        repeatCount="indefinite"
+        to="360 50 52"
+        type="rotate"
+      />
+    </circle>
+  </svg>
+</div>
+`;
