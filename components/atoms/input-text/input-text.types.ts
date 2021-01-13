@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactElement } from 'react'
 
-export type TIconTypes = {
+export type TInputTextIconTypes = {
   icon?: ReactElement
 }
 
@@ -10,5 +10,5 @@ export type TInputTextRequiredTypes = {
 }
 
 export type TInputTextProperties = HTMLAttributes<HTMLInputElement> &
-  TIconTypes &
+  TInputTextIconTypes &
   TInputTextRequiredTypes

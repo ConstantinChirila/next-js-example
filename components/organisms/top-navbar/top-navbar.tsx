@@ -2,9 +2,13 @@ import React, { ReactElement, useContext } from 'react'
 
 import { Button, IconMagnifier, InputText } from '@tooploox-test/components'
 import { StyledFormWrapper, StyledTopNavbar } from './top-navbar.styled'
+import { TTopNavbarProperties } from './top-navbar.types'
 import { ThemeContext } from 'styled-components'
 
-export function TopNavbar({ onChange, onSubmit }): ReactElement {
+export function TopNavbar({
+  onChange,
+  onSubmit,
+}: TTopNavbarProperties): ReactElement {
   const { colors } = useContext(ThemeContext)
 
   return (

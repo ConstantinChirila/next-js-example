@@ -1,3 +1,3 @@
-import { HTMLAttributes } from 'react'
+import { SVGAttributes } from 'react'
 
-export type TSVGIconProperties = HTMLAttributes<SVGElement>
+export type TSVGIconProperties = SVGAttributes<SVGSVGElement>
