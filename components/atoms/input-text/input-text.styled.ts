@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-import { TInputTextProperties } from './input-text.types'
-
-import { StyledSVGIcon } from '../svg-icon/svg-icon.styled'
+import { StyledSVGIcon, TInputTextProperties } from '@tooploox-test/components'
 
 export const StyledInputTextWrapper = styled.div`
   align-items: center;

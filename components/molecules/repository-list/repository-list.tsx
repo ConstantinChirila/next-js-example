@@ -1,10 +1,13 @@
 import React, { ReactElement } from 'react'
 
-import { Description, Heading, Pill } from '@tooploox-test/components'
-
-import { TRepositoryListProperties } from './repository-list.types'
-import { StyledRepositoryListWrapper } from './repository-list.styled'
-import { Spinner } from '../spinner'
+import {
+  Description,
+  Heading,
+  Pill,
+  Spinner,
+  StyledRepositoryListWrapper,
+  TRepositoryListProperties,
+} from '@tooploox-test/components'
 
 export function RepositoryList({
   fallbackMessage,

@@ -1,8 +1,7 @@
 import React, { ReactElement, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 
-import { StyledSpinnerWrapper } from './spinner.styled'
-import { IconSpinner } from '../icons'
+import { IconSpinner, StyledSpinnerWrapper } from '@tooploox-test/components'
 
 export function Spinner(): ReactElement {
   const { colors } = useContext(ThemeContext)

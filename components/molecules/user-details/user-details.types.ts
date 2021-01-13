@@ -1,4 +1,4 @@
-import { TGetUserDetailsTransformed } from './../../../services/get-user-details/get-user-details.types'
+import { TGetUserDetailsTransformed } from '@tooploox-test/services'
 
 import { MutationStatus } from 'react-query'
 

@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react'
-import { SVGIcon } from '@tooploox-test/components'
-import { TIconTypes } from '../icon.types'
+import { SVGIcon, TIconTypes } from '@tooploox-test/components'
 
 export function IconSpinner(properties: TIconTypes): ReactElement {
   return (
