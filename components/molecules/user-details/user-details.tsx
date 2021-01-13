@@ -1,6 +1,11 @@
 import React, { ReactElement } from 'react'
 
-import { Avatar, Description, Heading } from '@tooploox-test/components'
+import {
+  Avatar,
+  Description,
+  Heading,
+  Spinner,
+} from '@tooploox-test/components'
 
 import {
   StyledUserAvatarWrapper,
@@ -9,17 +14,34 @@ import {
 import { TUserDetailsProperties } from './user-details.types'
 
 export function UserDetails({
-  avatarUrl,
-  description,
-  profileName,
+  profile,
+  status,
 }: TUserDetailsProperties): ReactElement {
+  if (status === 'idle') {
+    return (
+      <Description>Please search for any user e.g. tannerlinsley</Description>
+    )
+  }
+
+  if (status === 'loading') {
+    return <Spinner />
+  }
+
+  if (status === 'error' || !profile) {
+    return <>error</>
+  }
+
+  const { avatarUrl, description, name } = profile
   return (
     <StyledUserDetails>
       <StyledUserAvatarWrapper>
-        <Avatar src={avatarUrl} alt={`Avatar of ${profileName}`} />
-        <Heading>{profileName}</Heading>
+        <Avatar
+          alt={`Avatar of ${name || 'user without specified full name'}`}
+          src={avatarUrl}
+        />
+        <Heading>{name || 'Name not specified'}</Heading>
       </StyledUserAvatarWrapper>
-      <Description>{description}</Description>
+      <Description>{description || 'Description not specified'}</Description>
     </StyledUserDetails>
   )
 }
