@@ -20,8 +20,14 @@ Shows details about the users, including name, link, top3 repositories.
 
 ## How to run it?
 
-By default the app will be served on the port `8080`.
-The url will be `http://localhost:8080`.
+1. You need to generate an API key using this (guide)[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token].
+2. You have to add a new file called `.env.local`
+3. Paste your generated API key in the `.env.local` file with this key on the front `NEXT_PUBLIC_GITHUB_TOKEN` with equal sign and quotes around the value.
+   e.g
+
+```
+NEXT_PUBLIC_GITHUB_TOKEN='YOUR_KEY_HERE'
+```
 
 ### Install dependencies
 
@@ -40,6 +46,9 @@ yarn dev
 ```javascript
 yarn dev:ssr
 ```
+
+By default the app will be served on the port `8080` both on build on server and locally.
+The url will be `http://localhost:8080`.
 
 ### Run unit tests
 
