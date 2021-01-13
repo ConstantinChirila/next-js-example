@@ -24,6 +24,6 @@
     "strict": true,
     "target": "es5"
   },
-  "exclude": ["node_modules", ".next", "out"],
+  "exclude": ["node_modules", ".next", "out", "**/*.spec.ts", "**/*.spec.tsx"],
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "next-env.d.ts", "styled.d.ts"]
 }

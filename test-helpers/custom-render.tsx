@@ -8,11 +8,11 @@ function DefaultProviders({ children }: PropsWithChildren<{}>): ReactElement {
   return <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
 }
 
-function customRenderWrapper(
+function renderWithTheme(
   ui: ReactElement,
-  options: RenderOptions
+  options?: RenderOptions
 ): RenderResult {
   return render(ui, { wrapper: DefaultProviders, ...options })
 }
 
-export { customRenderWrapper as customRender }
+export { renderWithTheme }

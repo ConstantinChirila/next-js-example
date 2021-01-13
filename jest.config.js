@@ -1,4 +1,15 @@
+const { pathsToModuleNameMapper } = require('ts-jest/utils')
+const { compilerOptions } = require('./tsconfig')
+
 module.exports = {
+  collectCoverageFrom: ['**/*.{,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+  coverageReporters: ['cobertura', 'html'],
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.test.json',
+      isolatedModules: true,
+    },
+  },
   roots: ['<rootDir>'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
@@ -10,10 +21,9 @@ module.exports = {
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
   ],
-  moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
-  },
-  setupFilesAfterEnv: ['<rootDir>/configuration/jest/index.ts'],
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
+  moduleDirectories: ['node_modules', '<rootDir>'],
+  modulePaths: ['./'],
+  setupFilesAfterEnv: ['<rootDir>/test-helpers/jest.setup.ts'],
   resetMocks: true,
 }
