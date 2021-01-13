@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import App from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { QueryClientProvider, QueryClient } from 'react-query'
@@ -9,8 +8,9 @@ import { hasWindow } from '@tooploox-test/helpers'
 
 const isLocalEnvironment = process.env.NODE_ENV === 'development'
 
-if (isLocalEnvironment && !hasWindow()) {
-  const axe = require('react-axe')
+if (isLocalEnvironment && hasWindow()) {
+  const ReactDOM = require('react-dom')
+  const axe = require('@axe-core/react')
   axe(React, ReactDOM, 1000)
 }
 export default class MyApp extends App {
