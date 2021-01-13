@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'next/app'
 import { ThemeProvider } from 'styled-components'
+import { QueryClientProvider, QueryClient } from 'react-query'
 
 import { defaultTheme, GlobalStyles } from '@tooploox-test/theme'
 import { hasWindow } from '@tooploox-test/helpers'
@@ -15,11 +16,22 @@ if (isLocalEnvironment && !hasWindow()) {
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
+    const queryClient = new QueryClient({
+      defaultOptions: {
+        queries: {
+          retry: false,
+          refetchOnMount: false,
+          refetchOnWindowFocus: false,
+        },
+      },
+    })
 
     return (
       <ThemeProvider theme={defaultTheme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </ThemeProvider>
     )
   }
