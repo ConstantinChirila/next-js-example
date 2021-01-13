@@ -11,7 +11,6 @@ import {
 import { Error } from 'components/atoms'
 
 export function RepositoryList({
-  error,
   fallbackMessage,
   heading,
   list,
@@ -30,7 +29,7 @@ export function RepositoryList({
   }
 
   if (status === 'error') {
-    return <Error message={error} />
+    return <Error />
   }
 
   return (
