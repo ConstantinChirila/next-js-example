@@ -10,7 +10,7 @@ export async function getUserDetails(
   })
   if (!response.ok) {
     // we can log it here to rollbar, sentry, app-insights etc or with the onError in React-Query hook
-    throw new Error(response.statusText)
+    throw response.statusText
   }
 
   const json = await response.json()
