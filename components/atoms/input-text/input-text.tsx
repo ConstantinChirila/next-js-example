@@ -17,7 +17,7 @@ export function InputText({
   return (
     <StyledInputTextWrapper>
       {icon && <StyledIconWrapper>{icon}</StyledIconWrapper>}
-      <StyledInputText {...properties} id={id} />
+      <StyledInputText {...properties} id={id} placeholder={placeholder} />
       <StyledLabel htmlFor={id}>{placeholder}</StyledLabel>
     </StyledInputTextWrapper>
   )
