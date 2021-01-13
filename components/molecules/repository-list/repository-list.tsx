@@ -4,18 +4,30 @@ import { Description, Heading, Pill } from '@tooploox-test/components'
 
 import { TRepositoryListProperties } from './repository-list.types'
 import { StyledRepositoryListWrapper } from './repository-list.styled'
+import { Spinner } from '../spinner'
 
 export function RepositoryList({
   fallbackMessage,
   heading,
   list,
-}: TRepositoryListProperties): ReactElement {
+  status,
+}: TRepositoryListProperties): ReactElement | null {
+  if (status === 'idle') {
+    return null
+  }
+
+  if (status === 'loading') {
+    return <Spinner />
+  }
+
+  if (!list || list.length === 0 || status === 'error') {
+    return <Description>{fallbackMessage}</Description>
+  }
+
   return (
     <StyledRepositoryListWrapper>
       <Heading as="h2">{heading}</Heading>
-      {!list ||
-        (list.length === 0 && <Description>{fallbackMessage}</Description>)}
-      {list?.map(({ name, url, stars }, index) => (
+      {list.map(({ name, url, stars }, index) => (
         <Pill as="a" href={url} key={`repository-list-item-${index}`}>
           {name}
           {stars}
