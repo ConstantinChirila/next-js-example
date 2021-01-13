@@ -24,12 +24,12 @@ export function RepositoryList({
     return <Spinner />
   }
 
-  if (!list || list.length === 0) {
-    return <Description>{fallbackMessage}</Description>
-  }
-
   if (status === 'error') {
     return <Error />
+  }
+
+  if (!list || list.length === 0) {
+    return <Description>{fallbackMessage}</Description>
   }
 
   return (
