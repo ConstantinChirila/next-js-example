@@ -32,3 +32,9 @@ export type TGetUserDetailsResponse = {
   created_at: string
   updated_at: string
 }
+
+export type TGetUserDetailsTransformed = {
+  avatarUrl: TGetUserDetailsResponse['avatar_url']
+  description: TGetUserDetailsResponse['bio']
+  name: TGetUserDetailsResponse['name']
+}

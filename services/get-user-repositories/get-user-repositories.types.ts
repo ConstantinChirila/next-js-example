@@ -1,9 +1,3 @@
-export type TGetUserRespositoriesResponse = {
-  total_count: number
-  incomplete_results: boolean
-  items: TRepositorySingle[]
-}
-
 export type TRepositorySingle = {
   archive_url: string
   archived: boolean
@@ -121,4 +115,12 @@ export type TRespositorySingleError = {
   resource: string
   field: string
   code: string
+}
+
+export type TStarsType = Pick<TRepositorySingle, 'stargazers_count'>
+
+export type TRepositoriesTransformed = {
+  name: TRepositorySingle['name']
+  stars: TRepositorySingle['stargazers_count']
+  url: TRepositorySingle['name']
 }

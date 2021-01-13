@@ -1,12 +1,14 @@
-import { TGetUserDetailsResponse } from './../../services/get-user-details/get-user-details.types'
-import { TUserProfile } from 'contexts/user-context/user-context.types'
+import {
+  TGetUserDetailsResponse,
+  TGetUserDetailsTransformed,
+} from './get-user-details.types'
 
 export function getBasicUserProfileDetails({
   // eslint-disable-next-line @typescript-eslint/camelcase
   avatar_url,
   bio,
   name,
-}: Pick<TGetUserDetailsResponse, 'avatar_url' | 'bio' | 'name'>): TUserProfile {
+}: TGetUserDetailsResponse): TGetUserDetailsTransformed {
   return {
     // eslint-disable-next-line @typescript-eslint/camelcase
     avatarUrl: avatar_url,
@@ -17,7 +19,7 @@ export function getBasicUserProfileDetails({
 
 export function transformUserDetailsResponse(
   response: TGetUserDetailsResponse
-): TUserProfile {
+): TGetUserDetailsTransformed {
   const userDetailsTransformed = getBasicUserProfileDetails(response)
   return userDetailsTransformed
 }
