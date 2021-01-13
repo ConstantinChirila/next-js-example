@@ -2,7 +2,13 @@ const { pathsToModuleNameMapper } = require('ts-jest/utils')
 const { compilerOptions } = require('./tsconfig')
 
 module.exports = {
-  collectCoverageFrom: ['**/*.{,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+  collectCoverageFrom: [
+    '**/*.{,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/*.types.ts',
+    '!**/index.ts',
+    '!**/node_modules/**',
+  ],
   coverageReporters: ['cobertura', 'html'],
   globals: {
     'ts-jest': {
