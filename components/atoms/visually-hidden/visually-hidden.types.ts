@@ -1,3 +1,5 @@
-import { HTMLAttributes } from 'react'
+import { AllHTMLAttributes, ElementType } from 'react'
 
-export type TVisuallyHiddenProperties = HTMLAttributes<HTMLDivElement>
+export type TVisuallyHiddenProperties = AllHTMLAttributes<HTMLDivElement> & {
+  as?: ElementType
+}
