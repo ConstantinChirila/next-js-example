@@ -7,7 +7,11 @@ import React, {
 } from 'react'
 import Head from 'next/head'
 
-import { TopNavbar, UserProfile } from '@tooploox-test/components'
+import {
+  TopNavbar,
+  UserProfile,
+  VisuallyHidden,
+} from '@tooploox-test/components'
 
 export default function Home(): ReactElement {
   const [inputState, setInputState] = useState<string>('')
@@ -37,6 +41,7 @@ export default function Home(): ReactElement {
       </Head>
 
       <main>
+        <VisuallyHidden as="h1">Tooploox technical test</VisuallyHidden>
         <TopNavbar onChange={onChange} onSubmit={onSubmit} />
         <UserProfile profileName={submitValue} />
       </main>
