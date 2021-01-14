@@ -51,4 +51,10 @@ export const defaultTheme = {
     lg: '1.2rem',
     xl: '1.6rem',
   },
+  screen: {
+    xsMin: '480px',
+    smMin: '768px',
+    mdMin: '992px',
+    lgMin: '1200px',
+  },
 }
