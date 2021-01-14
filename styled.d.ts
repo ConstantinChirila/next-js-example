@@ -1,4 +1,4 @@
-import { defaultTheme } from './theme/theme'
+import { defaultTheme } from '@tooploox-test/theme'
 
 type CustomTheme = typeof defaultTheme
 
