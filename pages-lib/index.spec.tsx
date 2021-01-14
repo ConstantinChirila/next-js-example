@@ -9,9 +9,6 @@ import { renderWithReactQueryContext } from '../test-helpers'
 import { urls } from '../configuration'
 import { githubResponseWithUser, gitubResponseWithRepositories } from '../mocks'
 
-// take over the console errors so they will not polute logs
-console.error = jest.fn()
-
 // default happy path handlers
 const handlers = [
   rest.get(
@@ -109,6 +106,8 @@ it('should render user profile with repositories when correct response', async (
 })
 
 it('should render 404 message if user is not found', async () => {
+  console.error = jest.fn()
+
   server.use(
     rest.get(
       `${urls.githubUsersApi}/kentcdodds`,
@@ -139,9 +138,13 @@ it('should render 404 message if user is not found', async () => {
   await waitFor(() =>
     expect(screen.getByText(/user not found!/i)).toBeInTheDocument()
   )
+
+  expect(console.error).toHaveBeenCalledTimes(1)
 })
 
 it('should render error message if other error happen', async () => {
+  console.error = jest.fn()
+
   server.use(
     rest.get(
       `${urls.githubUsersApi}/kentcdodds`,
@@ -170,6 +173,7 @@ it('should render error message if other error happen', async () => {
   )
 
   await waitFor(() => expect(screen.getByText(/ah snap!/i)).toBeInTheDocument())
+  expect(console.error).toHaveBeenCalledTimes(1)
 })
 
 // by default it uses happy path for profile as they both depend on each other
@@ -208,6 +212,8 @@ it('should render no repository message if user has no repositories', async () =
 })
 
 it('should render error message if repository API is failing', async () => {
+  console.error = jest.fn()
+
   server.use(
     rest.get(
       `${urls.githubUsersApi}/kentcdodds/repos*`,
@@ -236,4 +242,5 @@ it('should render error message if repository API is failing', async () => {
   )
 
   await waitFor(() => expect(screen.getByText(/ah snap!/i)).toBeInTheDocument())
+  expect(console.error).toHaveBeenCalledTimes(1)
 })
