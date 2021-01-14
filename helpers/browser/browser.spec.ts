@@ -1,13 +1,8 @@
-/**
- * @jest-environment node
- */
-
-//  setting node enviroment is the easiest way to test it :-)
-
 import { hasWindow } from './browser'
 
 describe('HasWindow', () => {
   it('should return FALSE if window is undefined', () => {
+    delete (global as any).window
     expect(hasWindow()).toBe(false)
   })
 
