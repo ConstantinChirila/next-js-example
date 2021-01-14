@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import { QueryClientProvider, QueryClient } from 'react-query'
 
 import { defaultTheme, GlobalStyles } from '@tooploox-test/theme'
+import { reactQueryDefaults } from '@tooploox-test/configuration'
 import { hasWindow } from '@tooploox-test/helpers'
 
 const isLocalEnvironment = process.env.NODE_ENV === 'development'
@@ -17,13 +18,7 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     const queryClient = new QueryClient({
-      defaultOptions: {
-        queries: {
-          retry: false,
-          refetchOnMount: false,
-          refetchOnWindowFocus: false,
-        },
-      },
+      ...reactQueryDefaults,
     })
 
     return (
