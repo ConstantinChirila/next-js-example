@@ -9,6 +9,9 @@ import { renderWithReactQueryContext } from '../test-helpers'
 import { urls } from '../configuration'
 import { githubResponseWithUser, gitubResponseWithRepositories } from '../mocks'
 
+// take over the console errors so they will not polute logs
+console.error = jest.fn()
+
 // default happy path handlers
 const handlers = [
   rest.get(
@@ -146,6 +149,72 @@ it('should render error message if other error happen', async () => {
         return response(
           context.status(500),
           context.json({ message: 'Server error' })
+        )
+      }
+    )
+  )
+
+  renderWithReactQueryContext(<IndexPage />)
+
+  userEvent.type(
+    screen.getByRole('textbox', {
+      name: /search for users/i,
+    }),
+    'kentcdodds'
+  )
+
+  userEvent.click(
+    screen.getByRole('button', {
+      name: /search/i,
+    })
+  )
+
+  await waitFor(() => expect(screen.getByText(/ah snap!/i)).toBeInTheDocument())
+})
+
+// by default it uses happy path for profile as they both depend on each other
+// so it would't fetch those if user does not exist :-)
+
+it('should render no repository message if user has no repositories', async () => {
+  server.use(
+    rest.get(
+      `${urls.githubUsersApi}/kentcdodds/repos*`,
+      async (_request, response, context) => {
+        return response(context.status(200), context.json([]))
+      }
+    )
+  )
+
+  renderWithReactQueryContext(<IndexPage />)
+
+  userEvent.type(
+    screen.getByRole('textbox', {
+      name: /search for users/i,
+    }),
+    'kentcdodds'
+  )
+
+  userEvent.click(
+    screen.getByRole('button', {
+      name: /search/i,
+    })
+  )
+
+  await waitFor(() =>
+    expect(
+      screen.getByText(/no repositories found for a given user.../i)
+    ).toBeInTheDocument()
+  )
+})
+
+it('should render error message if repository API is failing', async () => {
+  server.use(
+    rest.get(
+      `${urls.githubUsersApi}/kentcdodds/repos*`,
+      async (_request, response, context) => {
+        return response(
+          context.status(500),
+          context.json({ message: "I'm down" })
         )
       }
     )
