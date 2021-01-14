@@ -16,5 +16,9 @@ export const StyledUserAvatarWrapper = styled.div`
   > ${StyledHeading} {
     margin: 0 0 0 1.6rem;
     max-width: 10rem;
+
+    @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+      max-width: 100%;
+    }
   }
 `
