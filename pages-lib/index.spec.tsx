@@ -104,3 +104,67 @@ it('should render user profile with repositories when correct response', async (
     })
   ).not.toBeInTheDocument()
 })
+
+it('should render 404 message if user is not found', async () => {
+  server.use(
+    rest.get(
+      `${urls.githubUsersApi}/kentcdodds`,
+      async (_request, response, context) => {
+        return response(
+          context.status(404),
+          context.json({ message: 'Not Found' })
+        )
+      }
+    )
+  )
+
+  renderWithReactQueryContext(<IndexPage />)
+
+  userEvent.type(
+    screen.getByRole('textbox', {
+      name: /search for users/i,
+    }),
+    'kentcdodds'
+  )
+
+  userEvent.click(
+    screen.getByRole('button', {
+      name: /search/i,
+    })
+  )
+
+  await waitFor(() =>
+    expect(screen.getByText(/user not found!/i)).toBeInTheDocument()
+  )
+})
+
+it('should render error message if other error happen', async () => {
+  server.use(
+    rest.get(
+      `${urls.githubUsersApi}/kentcdodds`,
+      async (_request, response, context) => {
+        return response(
+          context.status(500),
+          context.json({ message: 'Server error' })
+        )
+      }
+    )
+  )
+
+  renderWithReactQueryContext(<IndexPage />)
+
+  userEvent.type(
+    screen.getByRole('textbox', {
+      name: /search for users/i,
+    }),
+    'kentcdodds'
+  )
+
+  userEvent.click(
+    screen.getByRole('button', {
+      name: /search/i,
+    })
+  )
+
+  await waitFor(() => expect(screen.getByText(/ah snap!/i)).toBeInTheDocument())
+})
