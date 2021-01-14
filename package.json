@@ -8,6 +8,7 @@
     "build": "next build",
     "dev": "next dev -p 8080",
     "dev:ssr": "next build && next start -p 8080",
+    "export": "next export",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "start": "next start",
