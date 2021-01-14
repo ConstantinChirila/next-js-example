@@ -14,4 +14,8 @@ export const StyledPill = styled.div`
   padding: 1.6rem;
   text-decoration: none;
   width: 100%;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    font-size: 1.6rem;
+  }
 `

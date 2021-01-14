@@ -20,6 +20,13 @@ exports[`Button should match a snapshot 1`] = `
   width: 100%;
 }
 
+@media only screen and (min-width:768px) {
+  .c0 {
+    height: 5rem;
+    font-size: 1.6rem;
+  }
+}
+
 <div>
   <button
     class="c0"

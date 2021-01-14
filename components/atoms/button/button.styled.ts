@@ -16,4 +16,9 @@ export const StyledButton = styled.button<TButtonProperties>`
   letter-spacing: 0.04rem;
   padding: 1.2rem;
   width: 100%;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    height: 5rem;
+    font-size: 1.6rem;
+  }
 `

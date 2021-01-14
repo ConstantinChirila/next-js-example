@@ -19,6 +19,11 @@ export const StyledLabel = styled.label`
   position: absolute;
   top: 1rem;
   transition: 0.1s ease transform, color, font-size;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    font-size: 1.6rem;
+    top: 1.6rem;
+  }
 `
 
 export const StyledIconWrapper = styled.div`
@@ -33,6 +38,10 @@ export const StyledIconWrapper = styled.div`
   padding-left: 0.5rem;
   pointer-events: none;
   width: 2.5rem;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    height: 5rem;
+  }
 
   > ${StyledSVGIcon} {
     transform: scale(0.7);
@@ -56,6 +65,11 @@ export const StyledInputText = styled.input<TInputTextProperties>`
   padding: 1.4rem 1.4rem 1.4rem 0.8rem;
   width: 100%;
 
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    font-size: 1.6rem;
+    height: 5rem;
+  }
+
   ::placeholder {
     /* Why have done it?
      This is due to the design of the form element and a lack of time to find any better solution :-(
@@ -71,6 +85,11 @@ export const StyledInputText = styled.input<TInputTextProperties>`
       color: ${({ theme }) => theme.colors.navy};
       font-size: 1rem;
       transform: translate3d(0, -1rem, 0);
+
+      @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+        font-size: 1.4rem;
+        transform: translate3d(0, -1.6rem, 0);
+      }
     }
   }
 `

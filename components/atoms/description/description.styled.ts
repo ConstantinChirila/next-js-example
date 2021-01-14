@@ -11,4 +11,9 @@ export const StyledDescription = styled.p<TDescriptionProperties>`
   line-height: ${19 / 14};
   max-width: 28rem;
   width: 100%;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    font-size: 1.6rem;
+    max-width: 100%;
+  }
 `

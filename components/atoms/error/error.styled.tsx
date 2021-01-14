@@ -9,9 +9,19 @@ export const StyledError = styled.div`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1.4rem;
   padding: 1.5rem;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    font-size: 1.6rem;
+    max-width: 100%;
+  }
 `
 export const StyledErrorMessage = styled.p`
   line-height: 1.6;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screen.smMin}) {
+    font-size: 1.6rem;
+    max-width: 100%;
+  }
 `
 
 export const StyledNotFoundIcon = styled((properties) => (
