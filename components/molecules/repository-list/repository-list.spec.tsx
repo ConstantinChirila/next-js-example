@@ -47,7 +47,6 @@ describe('RepositoryList', () => {
           name: /john/i,
         })
       ).toHaveAttribute('href', 'http://google.com')
-      expect(screen.getByText(/5/i)).toBeInTheDocument()
     })
   })
 })

@@ -35,10 +35,9 @@ export function RepositoryList({
   return (
     <StyledRepositoryListWrapper>
       <Heading as="h2">{heading}</Heading>
-      {list.map(({ name, url, stars }, index) => (
+      {list.map(({ name, url }, index) => (
         <Pill as="a" href={url} key={`repository-list-item-${index}`}>
           {name}
-          {stars}
         </Pill>
       ))}
     </StyledRepositoryListWrapper>
