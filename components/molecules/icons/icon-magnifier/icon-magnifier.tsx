@@ -1,8 +1,12 @@
 import React, { ReactElement } from 'react'
 
-import { SVGIcon, TIconTypes, VisuallyHidden } from '@tooploox-test/components'
+import {
+  SVGIcon,
+  TIconProperties,
+  VisuallyHidden,
+} from '@tooploox-test/components'
 
-export function IconMagnifier(properties: TIconTypes): ReactElement {
+export function IconMagnifier(properties: TIconProperties): ReactElement {
   return (
     <SVGIcon viewBox="0 0 16 16" {...properties} aria-hidden="true">
       <VisuallyHidden as="title">Magnifier icon</VisuallyHidden>

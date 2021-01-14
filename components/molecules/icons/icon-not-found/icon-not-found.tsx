@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react'
 
 import { SVGIcon, VisuallyHidden } from '@tooploox-test/components'
-import { TIconTypes } from '../icon.types'
+import { TIconProperties } from '../icon.types'
 
-export function IconNotFound(properties: TIconTypes): ReactElement {
+export function IconNotFound(properties: TIconProperties): ReactElement {
   return (
     <SVGIcon viewBox="0 -16 512 512" {...properties} aria-hidden="true">
       <VisuallyHidden as="title">Not found icon</VisuallyHidden>

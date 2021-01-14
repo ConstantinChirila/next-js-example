@@ -1,3 +1,3 @@
 import { SVGProps } from 'react'
 
-export type TIconTypes = SVGProps<SVGElement>
+export type TIconProperties = SVGProps<SVGElement>

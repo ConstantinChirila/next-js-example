@@ -1,7 +1,11 @@
 import React, { ReactElement } from 'react'
-import { SVGIcon, TIconTypes, VisuallyHidden } from '@tooploox-test/components'
+import {
+  SVGIcon,
+  TIconProperties,
+  VisuallyHidden,
+} from '@tooploox-test/components'
 
-export function IconSpinner(properties: TIconTypes): ReactElement {
+export function IconSpinner(properties: TIconProperties): ReactElement {
   return (
     <SVGIcon
       viewBox="0 0 100 100"
