@@ -42,6 +42,9 @@ export const defaultTheme = {
       bold: 700,
     },
   },
+  boxShadow: {
+    regular: '0 0.2rem 0.7rem rgba(0, 0, 0, 0.1)',
+  },
   radius: {
     sm: '0.4rem',
     md: '0.8rem',
